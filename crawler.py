@@ -1,4 +1,4 @@
-himport requests
+import requests
 from bs4 import BeautifulSoup
 import json
 import logging
@@ -32,7 +32,7 @@ class CyprusNewsCrawler:
                 if Path(DATABASE_PATH).exists():
                               with open(DATABASE_PATH, 'r', encoding='utf-8') as f:
                                                 return json.load(f)
-                                        return []
+        return []
 
             def save_articles(self):
                       """Save articles to JSON file"""
