@@ -1,4 +1,4 @@
-import requests
+himport requests
 from bs4 import BeautifulSoup
 import json
 import logging
@@ -44,12 +44,12 @@ class CyprusNewsCrawler:
                             content = f"{title}{url}".encode('utf-8')
                             return hashlib.md5(content).hexdigest()
 
-    def article_exists(self, title, url):
-              """Check if article already exists"""
-              article_hash = self.get_article_hash(title, url)
-              return any(article.get('hash') == article_hash for article in self.articles)
+          def article_exists(self, title, url):
+                    """Check if article already exists"""
+                    article_hash = self.get_article_hash(title, url)
+                    return any(article.get('hash') == article_hash for article in self.articles)
 
-    def crawl_source(self, source_name, source_config):
+          def crawl_source(self, source_name, source_config):
               """Crawl a single news source"""
               try:
                             logger.info(f"Crawling {source_name}...")
